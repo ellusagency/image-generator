@@ -1,0 +1,50 @@
+<!DOCTYPE html>
+<html lang="pt-BR">
+<head>
+  <meta charset="UTF-8" />
+  <title>Gerador de Imagens com IA</title>
+  <link rel="stylesheet" href="styles.css" />
+</head>
+<body>
+   <div class="container">
+  <h1>🎨 Gerador de Imagens com IA</h1>
+  <p class="subtitle">Descreva uma cena e gere uma imagem realista com IA</p>
+
+  <label>Descrição da cena</label>
+  <textarea id="description" placeholder="Ex: Uma casa moderna sustentável com painéis solares"></textarea>
+
+  <div class="row centered-row">
+  <div>
+    <label>Estilo</label>
+    <select id="style">
+      <option value="photorealistic">Realista</option>
+      <option value="illustration">Ilustração</option>
+      <option value="cinematic">Cinematográfico</option>
+    </select>
+  </div>
+
+  <div>
+    <label>Detalhamento</label>
+    <select id="variation">
+      <option value="standard">Padrão</option>
+      <option value="high detail">Alta Definição</option>
+    </select>
+  </div>
+</div>
+
+<div class="center">
+  <button id="generateBtn">✨ Gerar imagem</button>
+</div>
+
+<div id="status"></div>
+
+<div id="loader" class="loader"></div>
+
+  <div class="image-wrapper">
+    <img id="resultImage" />
+    <button id="downloadBtn" style="display:none;">Baixar imagem</button>
+  </div>
+  </div>
+  <script src="script.js"></script>
+</body>
+</html>
