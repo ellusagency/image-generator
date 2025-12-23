@@ -1,12 +1,23 @@
-
 {
   "name": "image-generator",
   "version": "1.0.0",
+  "description": "Gerador de imagens com IA usando OpenAI",
+  "main": "index.js",
+  "type": "commonjs",
   "scripts": {
     "start": "node index.js",
     "dev": "nodemon index.js"
   },
   "engines": {
-    "node": ">=18"
+    "node": "18.x"
+  },
+  "dependencies": {
+    "express": "^4.19.2",
+    "cors": "^2.8.5",
+    "dotenv": "^17.2.3",
+    "openai": "^4.0.0"
+  },
+  "devDependencies": {
+    "nodemon": "^3.1.11"
   }
 }
