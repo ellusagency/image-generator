@@ -1,4 +1,4 @@
-console.log("🚀 Script carregado");
+console.log("Script carregado");
 
 const button = document.getElementById("generateBtn");
 const downloadBtn = document.getElementById("downloadBtn");
@@ -10,14 +10,14 @@ button.addEventListener("click", generateImage);
 downloadBtn.addEventListener("click", downloadImage);
 
 async function generateImage() {
-  console.log("🖱️ Botão clicado");
+  console.log("Botão clicado");
 
   const description = document.getElementById("description").value;
   const style = document.getElementById("style").value;
   const variation = document.getElementById("variation").value;
 
   if (!description) {
-    status.innerText = "⚠️ Descreva a cena primeiro.";
+    status.innerText = "Descreva a cena primeiro.";
     return;
   }
 
@@ -29,7 +29,7 @@ async function generateImage() {
   image.style.display = "none";
 
   try {
-    console.log("📤 Enviando request para backend...");
+    console.log("Enviando request para backend...");
 
     const response = await fetch("/generate-image", {
       method: "POST",
@@ -39,10 +39,10 @@ async function generateImage() {
       body: JSON.stringify({ description, style, variation }),
     });
 
-    console.log("📥 Status da resposta:", response.status);
+    console.log("Status da resposta:", response.status);
 
     const data = await response.json();
-    console.log("📦 Dados recebidos:", data);
+    console.log("Dados recebidos:", data);
 
     if (!data.imageBase64) {
       throw new Error("Resposta sem imageBase64");
@@ -62,8 +62,8 @@ async function generateImage() {
     }, 100);
 
   } catch (error) {
-    console.error("❌ Erro no frontend:", error);
-    status.innerText = "❌ Erro ao gerar imagem.";
+    console.error("Erro no frontend:", error);
+    status.innerText = "Erro ao gerar imagem.";
   } finally {
     loader.style.display = "none";
     button.disabled = false;
