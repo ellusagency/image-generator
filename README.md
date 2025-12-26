@@ -10,18 +10,14 @@ O objetivo do projeto é demonstrar, na prática, a integração com LLMs e mode
 ## Funcionalidades
 
 - Geração de imagens a partir de texto
-- Controle de estilo (ex: realista, ilustração, cinematográfico)
-- Controle de nível de detalhamento
-- Interface web simples
+- Geração de imagens via API da OpenAI
+- Controle de estilo visual (ex: realista, ilustração, cinematográfico)
+- Controle de variação e nível de detalhamento
+- Interface web simples para descrever uma cena em texto
+- Feedback visual de carregamento durante a geração
+- Download da imagem gerada
 - Backend desacoplado da lógica de prompt
 - Pronto para deploy em ambiente cloud (ex: Render)
-=======
-- Interface simples para descrever uma cena em texto
-- Seleção de estilo visual (ex: realista, ilustração, cinematográfico)
-- Controle de variação / nível de detalhamento
-- Geração de imagem via API da OpenAI
-- Download da imagem gerada
-- Feedback visual de carregamento durante a geração
 
 ---
 
