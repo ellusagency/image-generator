@@ -21,7 +21,6 @@ Configuração segura via variáveis de ambiente
 
 Deploy funcional em ambiente web
 
-Estrutura do Projeto
 image-generator/
 ├── index.js
 ├── package.json
