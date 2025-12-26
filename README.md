@@ -1,4 +1,4 @@
-# Image Generator with OpenAI API
+# Gerador de Imagens com IA
 
 Este projeto é um pequeno aplicativo web que utiliza a API da OpenAI para gerar imagens a partir de descrições em texto.  
 A aplicação permite controlar o **prompt**, o **estilo visual** e o **nível de detalhamento**, simulando um cenário real de uso em produto.
