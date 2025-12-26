@@ -1,31 +1,43 @@
- # Gerador de Imagens com IA
+# Image Generator with OpenAI API
 
-Este projeto é uma aplicação web simples que integra a API da OpenAI para geração de imagens a partir de descrições em texto.
-O objetivo é demonstrar, de forma prática, o uso de modelos de IA generativa em um pequeno produto funcional, com código organizado, parâmetros controláveis e estrutura preparada para evolução.
+Este projeto é um pequeno aplicativo web que utiliza a API da OpenAI para gerar imagens a partir de descrições em texto.  
+A aplicação permite controlar o **prompt**, o **estilo visual** e o **nível de detalhamento**, simulando um cenário real de uso em produto.
 
-A aplicação permite que o usuário descreva uma cena, selecione estilo e nível de detalhamento, e receba uma imagem gerada dinamicamente.
+O objetivo do projeto é demonstrar, na prática, a integração com LLMs e modelos generativos de imagem, com código organizado, escolhas conscientes de parâmetros e possibilidade de evolução futura.
 
-Funcionalidades
+---
 
-Interface web para descrição de cenas em texto
+## Funcionalidades
 
-Controle de estilo visual (ex: realista, ilustração, cinematográfico)
+- Interface simples para descrever uma cena em texto
+- Seleção de estilo visual (ex: realista, ilustração, cinematográfico)
+- Controle de variação / nível de detalhamento
+- Geração de imagem via API da OpenAI
+- Download da imagem gerada
+- Feedback visual de carregamento durante a geração
 
-Controle de nível de detalhamento da imagem
+---
 
-Endpoint backend responsável pela integração com a OpenAI
+## Stack utilizada
 
-Código organizado por responsabilidade
+- **Node.js**
+- **Express**
+- **OpenAI API**
+- **HTML, CSS e JavaScript (frontend simples)**
+- **Render** para deploy
+- **GitHub** para versionamento
 
-Configuração segura via variáveis de ambiente
+---
 
-Deploy funcional em ambiente web
+## Estrutura do projeto
 
+```text
 image-generator/
 ├── index.js
 ├── package.json
 ├── .env.example
 ├── src/
+│   ├── app.js
 │   ├── routes/
 │   │   └── imageRoutes.js
 │   └── services/
@@ -34,107 +46,97 @@ image-generator/
 │   ├── index.html
 │   ├── styles.css
 │   └── script.js
+└── README.md
 
-Organização
+## Organização
 
-index.js: ponto de entrada da aplicação, responsável apenas por iniciar o servidor e configurar middlewares.
+index.js
+Arquivo de entrada da aplicação. Responsável apenas por inicializar o servidor.
 
-src/routes: define as rotas HTTP da aplicação.
+src/app.js
+Configuração principal do Express, middlewares e registro das rotas.
 
-src/services: concentra a lógica de negócio e a integração com a API da OpenAI.
+routes/
+Camada responsável exclusivamente por lidar com requisições HTTP.
 
-public: interface web (HTML, CSS e JavaScript).
+services/
+Camada onde fica a lógica de negócio e a integração com a API da OpenAI.
 
-.env.example: documenta as variáveis de ambiente necessárias, sem expor dados sensíveis.
+Essa separação mantém o código mais legível, facilita manutenção e permite evolução do projeto sem grandes refatorações.
 
-Essa separação facilita manutenção, leitura do código e futuras evoluções do projeto.
-
-Tecnologias Utilizadas
-
-Node.js
-
-Express
-
-OpenAI API
-
-HTML, CSS e JavaScript (frontend)
-
-Fetch API para comunicação com o backend
-
-Configuração do Ambiente
-
-Clone o repositório:
-
+Configuração do ambiente
+1. Clonar o repositório
 git clone https://github.com/ellusagency/image-generator.git
 cd image-generator
 
-
-Instale as dependências:
-
+2. Instalar dependências
 npm install
 
+3. Configurar variáveis de ambiente
+Crie um arquivo .env na raiz do projeto com base no .env.example:
+OPENAI_API_KEY=YOUR_API_KEY_HERE
+O arquivo .env não é versionado para evitar exposição de dados sensíveis.
 
-Crie um arquivo .env baseado no exemplo:
-
-cp .env.example .env
-
-
-Adicione sua chave da OpenAI no .env:
-
-OPENAI_API_KEY=your_api_key_here
-
-
-Rode o projeto:
-
+Executar localmente
 npm run dev
 
-Escolha de Parâmetros de Geração
 
-A geração da imagem é controlada por três elementos principais:
+O servidor ficará disponível em:
 
-Prompt (descrição): texto livre fornecido pelo usuário, usado como base da geração.
+http://localhost:3000
 
-Estilo: influencia o tom visual da imagem (ex: realista, ilustração).
+Como funciona a geração da imagem
 
-Variação / detalhamento: ajusta o nível de complexidade visual da imagem gerada.
+1. O usuário descreve a cena no frontend
+2. O backend recebe a requisição
+3. O serviço de geração monta o prompt com base em:
+   * Texto da descrição
+   * Estilo selecionado
+   * Nível de detalhamento
+4. A requisição é enviada para a API da OpenAI
+5. A imagem gerada é retornada e exibida na interface
 
-Esses parâmetros são tratados no frontend e enviados ao backend, onde são incorporados ao prompt final enviado para a API da OpenAI.
+Escolha consciente de parâmetros
 
-Como Trocar o Modelo de Geração
+ Prompt:
+ Construído de forma explícita para refletir o estilo e o detalhamento escolhidos.
 
-A aplicação foi estruturada para facilitar a troca do modelo de geração de imagens no futuro.
+ Estilo:
+ Controla a direção estética da imagem, simulando diferentes usos em produto.
 
-Atualmente, o modelo é definido no serviço responsável pela integração com a OpenAI:
+ Variação / detalhamento:
+  Ajusta a complexidade visual da imagem, permitindo resultados mais simples ou mais ricos.
 
-Arquivo:
-src/services/imageService.js
+Esses parâmetros foram pensados para serem facilmente ajustáveis e extensíveis.
 
-Exemplo simplificado:
+## Como trocar o modelo no futuro
 
-const result = await openai.images.generate({
-  model: "gpt-image-1",
-  prompt: finalPrompt,
-  size: "1024x1024"
-});
+A troca de modelo é simples e isolada na camada de serviço.
 
-Para trocar o modelo:
+  Arquivo:
+  src/services/imageService.js
 
-Acesse o arquivo imageService.js
+  Basta alterar o parâmetro de modelo utilizado na chamada da API, por exemplo:
+  model: "gpt-image-1"
 
-Altere o valor da propriedade model para o novo modelo desejado
+Pode ser substituído por outro modelo compatível sem impactar:
 
-Ajuste parâmetros adicionais, se necessário (tamanho, qualidade, variações)
+  * Rotas
+  * Frontend
+  * Estrutura geral do projeto
 
-Exemplo:
+Essa abordagem permite:
 
-model: "novo-modelo-aqui"
+  * Testar novos modelos
+  * Ajustar custo vs qualidade
+  * Evoluir o produto sem refatoração estrutural
 
+## Deploy
 
-Como a lógica de integração está isolada na camada de serviço, essa troca não exige mudanças nas rotas nem na interface, mantendo o restante da aplicação intacto.
+A aplicação está publicada utilizando Render.
+O deploy é automático a partir da branch principal do repositório no GitHub.
 
-Essa decisão permite que o projeto evolua facilmente para novos modelos ou APIs sem refatorações grandes.
+## Considerações finais
 
-Considerações Finais
-
-O projeto foi pensado para ir além de uma demo simples, seguindo boas práticas de organização, separação de responsabilidades e configuração segura.
-A estrutura permite que a aplicação seja facilmente integrada em um produto maior, com espaço para evolução futura, como autenticação, histórico de gerações ou persistência de dados.
+Este projeto não foi pensado como uma demo descartável, mas como uma base realista que poderia ser integrada a um produto maior.
+A organização, separação de responsabilidades e documentação visam facilitar manutenção, evolução e entendimento do código.
