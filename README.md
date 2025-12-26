@@ -165,4 +165,5 @@ O projeto pode ser publicado em plataformas como Render, configurando a variáve
 ## Observações finais
 
 Este projeto foi estruturado para ser simples, mas com padrões próximos de um produto real, facilitando manutenção, evolução e integração futura.
+
 =======
