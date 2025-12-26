@@ -113,10 +113,23 @@ const response = await openai.images.generate({
 });
 ```
 
-Para trocar o modelo:
-- Altere o campo `model`
-- Ajuste parâmetros conforme o modelo escolhido
-- Se necessário, ajuste o prompt
+Para trocar o modelo, basta:
+
+- Alterar o valor do campo `model`
+- Ajustar parâmetros específicos do novo modelo, se necessário
+- Refinar o prompt conforme o comportamento do modelo escolhido
+
+Essa alteração não impacta:
+
+- As rotas da aplicação
+- O frontend
+- A estrutura geral do projeto
+
+Essa decisão de arquitetura permite:
+
+- Testar novos modelos com baixo esforço
+- Avaliar custo versus qualidade
+- Evoluir o projeto sem refatorações estruturais
 
 ---
 
