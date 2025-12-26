@@ -1,14 +1,5 @@
 # Gerador de Imagens com IA
 
-## Visão geral
-
-Este projeto é um pequeno aplicativo web que permite gerar imagens a partir de descrições em texto utilizando a API da OpenAI.  
-A aplicação expõe um endpoint no backend em Node.js com Express e uma interface simples no frontend para envio do prompt, escolha de estilo e nível de detalhamento.
-
-O objetivo do projeto é demonstrar, na prática, o uso de modelos de geração de imagem, com código organizado, parâmetros controláveis e documentação clara, de forma que o sistema possa ser facilmente evoluído ou integrado a um produto maior.
-
-# Gerador de Imagens com IA
-
 Este projeto é um pequeno aplicativo web que utiliza a API da OpenAI para gerar imagens a partir de descrições em texto.  
 A aplicação permite controlar o **prompt**, o **estilo visual** e o **nível de detalhamento**, simulando um cenário real de uso em produto.
 
