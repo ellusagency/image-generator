@@ -43,7 +43,6 @@ O objetivo do projeto é demonstrar, na prática, a integração com LLMs e mode
 - **HTML, CSS e JavaScript (frontend simples)**
 - **Render** para deploy
 - **GitHub** para versionamento
->>>>>>> c9ed3b67673d98a652fde5de037758396bf509ec
 
 ---
 
