@@ -11,8 +11,8 @@ ${variation} detail level.
 Scene: ${description}
 `.trim();
 
-  console.log("🧠 Prompt gerado:\n" + prompt);
-  console.log("🔹 Chamando OpenAI...");
+  console.log(" Prompt gerado:\n" + prompt);
+  console.log(" Chamando OpenAI...");
 
   const response = await openai.images.generate({
     model: "gpt-image-1",
