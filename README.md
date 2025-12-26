@@ -5,6 +5,15 @@ A aplicação permite controlar o **prompt**, o **estilo visual** e o **nível d
 
 O objetivo do projeto é demonstrar, na prática, a integração com LLMs e modelos generativos de imagem, com código organizado, escolhas conscientes de parâmetros e possibilidade de evolução futura.
 
+## Links
+
+- Aplicação em produção (Render):  
+  https://image-generator-p0yy.onrender.com/
+
+- Repositório no GitHub:  
+  https://github.com/ellusagency/image-generator
+
+
 ---
 
 ## Funcionalidades
