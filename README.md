@@ -6,6 +6,7 @@ Este projeto é um pequeno aplicativo web que permite gerar imagens a partir de 
 A aplicação expõe um endpoint no backend em Node.js com Express e uma interface simples no frontend para envio do prompt, escolha de estilo e nível de detalhamento.
 
 O objetivo do projeto é demonstrar, na prática, o uso de modelos de geração de imagem, com código organizado, parâmetros controláveis e documentação clara, de forma que o sistema possa ser facilmente evoluído ou integrado a um produto maior.
+
 =======
 # Gerador de Imagens com IA
 
