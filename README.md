@@ -14,7 +14,6 @@ Este projeto é um pequeno aplicativo web que utiliza a API da OpenAI para gerar
 A aplicação permite controlar o **prompt**, o **estilo visual** e o **nível de detalhamento**, simulando um cenário real de uso em produto.
 
 O objetivo do projeto é demonstrar, na prática, a integração com LLMs e modelos generativos de imagem, com código organizado, escolhas conscientes de parâmetros e possibilidade de evolução futura.
->>>>>>> c9ed3b67673d98a652fde5de037758396bf509ec
 
 ---
 
@@ -52,7 +51,6 @@ O objetivo do projeto é demonstrar, na prática, a integração com LLMs e mode
 
 ```text
 image-generator/
-<<<<<<< HEAD
 =======
 ├── index.js
 ├── package.json
@@ -63,12 +61,10 @@ image-generator/
 │   │   └── imageRoutes.js
 │   └── services/
 │       └── imageService.js
->>>>>>> c9ed3b67673d98a652fde5de037758396bf509ec
 ├── public/
 │   ├── index.html
 │   ├── styles.css
 │   └── script.js
-<<<<<<< HEAD
 ├── src/
 │   ├── app.js
 │   ├── config/
