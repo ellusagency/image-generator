@@ -1,4 +1,4 @@
-# Image Generator with OpenAI
+# Gerador de Imagens com IA
 
 ## Visão geral
 
