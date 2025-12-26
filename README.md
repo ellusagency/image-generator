@@ -162,5 +162,5 @@ O deploy é automático a partir da branch principal do repositório no GitHub.
 
 ## Considerações finais
 
-Este projeto não foi pensado como uma demo descartável, mas como uma base realista que poderia ser integrada a um produto maior.
-A organização, separação de responsabilidades e documentação visam facilitar manutenção, evolução e entendimento do código.
+Este projeto não foi pensado como uma demo simples, mas como uma base um pouco mais sólida com a possibilidade e estrutura já otimizada para ser integrada a um produto.
+A organização, separação de responsabilidades e documentação foram pensadas para facilitar manutenção, evolução e entendimento do código.
