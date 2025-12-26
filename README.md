@@ -7,7 +7,6 @@ A aplicação expõe um endpoint no backend em Node.js com Express e uma interfa
 
 O objetivo do projeto é demonstrar, na prática, o uso de modelos de geração de imagem, com código organizado, parâmetros controláveis e documentação clara, de forma que o sistema possa ser facilmente evoluído ou integrado a um produto maior.
 
-=======
 # Gerador de Imagens com IA
 
 Este projeto é um pequeno aplicativo web que utiliza a API da OpenAI para gerar imagens a partir de descrições em texto.  
@@ -50,7 +49,6 @@ O objetivo do projeto é demonstrar, na prática, a integração com LLMs e mode
 
 ```text
 image-generator/
-=======
 ├── index.js
 ├── package.json
 ├── .env.example
@@ -166,4 +164,3 @@ O projeto pode ser publicado em plataformas como Render, configurando a variáve
 
 Este projeto foi estruturado para ser simples, mas com padrões próximos de um produto real, facilitando manutenção, evolução e integração futura.
 
-=======
