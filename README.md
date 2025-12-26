@@ -47,45 +47,62 @@ image-generator/
 │   ├── styles.css
 │   └── script.js
 └── README.md
+````
 
 ## Organização
 
-index.js
+- index.js
 Arquivo de entrada da aplicação. Responsável apenas por inicializar o servidor.
 
-src/app.js
+- src/app.js
 Configuração principal do Express, middlewares e registro das rotas.
 
-routes/
+- routes/
 Camada responsável exclusivamente por lidar com requisições HTTP.
 
-services/
+- services/
 Camada onde fica a lógica de negócio e a integração com a API da OpenAI.
 
 Essa separação mantém o código mais legível, facilita manutenção e permite evolução do projeto sem grandes refatorações.
 
-Configuração do ambiente
+## Configuração do ambiente
 1. Clonar o repositório
+
+````
 git clone https://github.com/ellusagency/image-generator.git
 cd image-generator
-
+````
 2. Instalar dependências
+
+````
 npm install
 
-3. Configurar variáveis de ambiente
+````
+
+2. Configurar variáveis de ambiente
+
 Crie um arquivo .env na raiz do projeto com base no .env.example:
+
+````
 OPENAI_API_KEY=YOUR_API_KEY_HERE
+
+````
 O arquivo .env não é versionado para evitar exposição de dados sensíveis.
 
 Executar localmente
+
+````
 npm run dev
 
+````
 
 O servidor ficará disponível em:
-
+````
 http://localhost:3000
+````
 
-Como funciona a geração da imagem
+
+## Como funciona a geração da imagem
 
 1. O usuário descreve a cena no frontend
 2. O backend recebe a requisição
@@ -114,10 +131,17 @@ Esses parâmetros foram pensados para serem facilmente ajustáveis e extensívei
 A troca de modelo é simples e isolada na camada de serviço.
 
   Arquivo:
-  src/services/imageService.js
+````
+src/services/imageService.js
+
+````
 
   Basta alterar o parâmetro de modelo utilizado na chamada da API, por exemplo:
-  model: "gpt-image-1"
+  
+````
+model: "gpt-image-1"
+
+````
 
 Pode ser substituído por outro modelo compatível sem impactar:
 
