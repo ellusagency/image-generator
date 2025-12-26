@@ -9,12 +9,9 @@ O objetivo do projeto é demonstrar, na prática, a integração com LLMs e mode
 
 ## Funcionalidades
 
-- Geração de imagens a partir de texto
-- Geração de imagens via API da OpenAI
-- Controle de estilo visual (ex: realista, ilustração, cinematográfico)
-- Controle de variação e nível de detalhamento
-- Interface web simples para descrever uma cena em texto
-- Feedback visual de carregamento durante a geração
+- Geração de imagens a partir de texto via API da OpenAI 
+- Controle de variação e nível de detalhamento (ex: realista, ilustração, cinematográfico)
+- Interface web simples para descrever com prompt uma cena em texto
 - Download da imagem gerada
 - Backend desacoplado da lógica de prompt
 - Pronto para deploy em ambiente cloud (ex: Render)
@@ -65,15 +62,6 @@ image-generator/
 ├── response.json
 └── README.md
 ```
-
----
-
-## Tecnologias utilizadas
-
-- Node.js
-- Express
-- OpenAI API
-- HTML, CSS e JavaScript
 
 ---
 
