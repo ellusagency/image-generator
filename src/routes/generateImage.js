@@ -3,23 +3,40 @@ const router = express.Router();
 const { generateImage } = require("../services/imageService");
 
 router.post("/", async (req, res) => {
+  console.log("Body recebido:", req.body);
+
+  const { description, style, variation } = req.body;
+
   try {
-    console.log(" Body recebido:", req.body);
+    const result = await generateImage({ description, style, variation });
 
-    const { description, style, variation } = req.body;
+    // erro tratado corretamente
+    if (!result.success) {
+      if (result.errorType === "CONTENT_BLOCKED") {
+        return res.status(400).json({
+          error: "CONTENT_BLOCKED",
+          message: result.message,
+        });
+      }
 
-    const result = await generateImage({
-      description,
-      style,
-      variation,
+      return res.status(500).json({
+        error: "INTERNAL_ERROR",
+        message: result.message,
+      });
+    }
+
+    // sucesso real
+    return res.status(200).json({
+      imageBase64: result.imageBase64,
     });
 
-    console.log(" Enviando resposta para o cliente");
+  } catch (err) {
+    console.error("Erro inesperado:", err);
 
-    return res.status(200).json(result);
-  } catch (error) {
-    console.error(" Erro no endpoint:", error);
-    return res.status(500).json({ error: "Failed to generate image" });
+    return res.status(500).json({
+      error: "INTERNAL_ERROR",
+      message: "Erro interno ao gerar a imagem.",
+    });
   }
 });
 
